@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+import Form from "./Form/Form.js";
+import Search from "./Search/Search.js";
+
 import style from "./App.css";
+
 const App = () => {
-  console.log(style);
   return (
     <div className={style.hello}>
-      <p>React here!</p>
-      <h1>How you doing?</h1>
+      <Form />
+      <Search />
     </div>
   );
 };
-export default App;
+
 ReactDOM.render(<App />, document.getElementById("app"));
