@@ -1,0 +1,13 @@
+{
+  "articles": [
+    {
+      "article_name": "cat"
+    },
+    {
+      "article_name": "dog"
+    },
+    {
+      "article_name": "fish"
+    }
+  ]
+}
