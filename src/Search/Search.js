@@ -26,7 +26,7 @@ export class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.searchBox}>
         <h1>The Guardian Search App</h1>
         <form onSubmit={this.handleSubmit}>
           <input

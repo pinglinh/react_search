@@ -1,12 +1,19 @@
+.searchBox {
+  text-align: center;
+}
+
 input[type="text"] {
-  width: 130px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+  width: 230px;
+  height: 30px;
+  background-color: #f2dea8;
+  border: none;
 }
 
 /* When the input field gets focus, change its width to 100% */
 input[type="text"]:focus {
-  width: 100%;
+  outline: none;
+  background-color: #f9f2d7;
+  /* width: 100%; */
 }
 
 .primaryButton {

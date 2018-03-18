@@ -8,7 +8,7 @@ import style from "./App.css";
 
 const App = () => {
   return (
-    <div className={style.hello}>
+    <div className={style.wrapper}>
       <Search />
     </div>
   );
