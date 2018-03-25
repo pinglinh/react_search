@@ -7,6 +7,9 @@ input[type="text"] {
   height: 30px;
   background-color: #f2dea8;
   border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #020205;
 }
 
 /* When the input field gets focus, change its width to 100% */

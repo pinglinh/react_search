@@ -1,7 +1,6 @@
 body {
   background-color: #141829;
   font-family: "Quattrocento Sans", sans-serif;
-  min-height: 100vh;
 }
 
 .wrapper {
@@ -9,4 +8,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }

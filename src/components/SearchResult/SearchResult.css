@@ -1,0 +1,17 @@
+.eachResult {
+  margin: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f4f7;
+}
+
+a:hover {
+  color: #e43a19;
+  text-decoration-style: double;
+}
