@@ -2,6 +2,47 @@ import React from "react";
 import style from "./Search.css";
 import SearchResult from "../SearchResult";
 
+export class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      value: ""
+    };
+  }
+
+  handleChange(event) {
+    let value = event.target.value;
+    this.setState({ value });
+    this.props.performSearch(value);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className={style.searchBox}>
+        <h1>The Guardian Search App</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </form>
+        <div>
+          {this.props.articles.map((r, index) => {
+            return <SearchResult key={index} result={r} />;
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+
 // export class Search extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -61,21 +102,21 @@ import SearchResult from "../SearchResult";
 //   }
 // }
 
-const Search = props => {
-  return (
-    <div className={style.searchBox}>
-      <h1>The Guardian Search App</h1>
-      <form onSubmit={props.handleSubmit}>
-        <input type="text" value={props.value} onChange={props.performSearch} />
-      </form>
-      <div>
-        {props.articles.map((r, index) => {
-          return <SearchResult key={index} result={r} />;
-        })}
-      </div>
-    </div>
-  );
-};
+// const Search = props => {
+//   return (
+//     <div className={style.searchBox}>
+//       <h1>The Guardian Search App</h1>
+//       <form onSubmit={props.handleSubmit}>
+//         <input type="text" value={props.value} onChange={props.performSearch} />
+//       </form>
+//       <div>
+//         {props.articles.map((r, index) => {
+//           return <SearchResult key={index} result={r} />;
+//         })}
+//       </div>
+//     </div>
+//   );
+// };
 
 export default Search;
 

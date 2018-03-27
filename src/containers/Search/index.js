@@ -5,23 +5,32 @@ export class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
+      // value: "",
       articles: []
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    this.performSearch = this.performSearch.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    console.log(event);
-    this.setState({ value: event.target.value });
-    fetch(`http://localhost:3456/?searchTerm=${event.target.value}`)
+  performSearch(query) {
+    fetch(`http://localhost:3456/?searchTerm=${query}`)
       .then(response => response.json())
       .then(data => {
         this.setState({ articles: data.response.results });
       });
   }
+
+  // handleChange(event) {
+  //   console.log(event);
+  //   this.setState({ value: event.target.value });
+  //   fetch(`http://localhost:3456/?searchTerm=${event.target.value}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       this.setState({ articles: data.response.results });
+  //     });
+  // }
 
   // handleChange(event) {
   //   console.log(event);
@@ -39,16 +48,16 @@ export class SearchContainer extends React.Component {
   //     .then(data => this.setState({ articles: data.response.results }));
   // }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  // }
 
   render() {
     return (
       <Search
-        handleSubmit={this.handleSubmit}
-        value={this.state.value}
-        performSearch={this.handleChange}
+        // handleSubmit={this.handleSubmit}
+        // value={this.state.value}
+        performSearch={this.performSearch}
         articles={this.state.articles}
       />
     );
