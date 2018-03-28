@@ -2,25 +2,17 @@ import React from "react";
 import Search from "../../components/Search";
 
 export class SearchContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // value: "",
-      articles: []
-    };
-
-    // this.handleChange = this.handleChange.bind(this);
-    this.performSearch = this.performSearch.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+  state = {
+    articles: []
   }
 
-  performSearch(query) {
+  performSearch = query => {
     fetch(`http://localhost:3456/?searchTerm=${query}`)
       .then(response => response.json())
       .then(data => {
         this.setState({ articles: data.response.results });
       });
-  }
+  };
 
   // handleChange(event) {
   //   console.log(event);
