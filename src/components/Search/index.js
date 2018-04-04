@@ -1,26 +1,21 @@
 import React from "react";
 import style from "./Search.css";
-import SearchResult from "../SearchResult";
+import SearchResults from "../SearchResults";
 
 export class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      value: ""
-    };
-  }
+  state = {
+    value: ""
+  };
 
-  handleChange(event) {
+  handleChange = event => {
     let value = event.target.value;
     this.setState({ value });
     this.props.performSearch(value);
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
-  }
+  };
 
   render() {
     return (
@@ -33,11 +28,7 @@ export class Search extends React.Component {
             onChange={this.handleChange}
           />
         </form>
-        <div>
-          {this.props.articles.map((r, index) => {
-            return <SearchResult key={index} result={r} />;
-          })}
-        </div>
+        <SearchResults articles={this.props.articles} />
       </div>
     );
   }
