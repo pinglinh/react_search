@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { SearchContainer } from "./containers/Search";
+import SearchContainer from "./containers/Search";
 
 import style from "./App.css";
 
