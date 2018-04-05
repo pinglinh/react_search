@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./SearchResult.css";
+import PropTypes from "prop-types";
 
 const SearchResult = ({ articles = [] }) => {
   return (
@@ -13,6 +14,10 @@ const SearchResult = ({ articles = [] }) => {
       ))}
     </ul>
   );
+};
+
+SearchResult.propTypes = {
+  articles: PropTypes.array
 };
 
 export default SearchResult;
